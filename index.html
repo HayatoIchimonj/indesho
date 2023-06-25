@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>特定のサイト検索</title>
+    <script>
+        function searchSite() {
+            var query = document.getElementById('searchQuery').value;
+            var site = 'stv.jp/radio/indesyo/info'; // 検索したい特定のサイトのドメインを指定します
+
+            if (query.trim() !== '') {
+                var url = 'https://www.google.com/search?q=site:' + site + ' ' + encodeURIComponent(query);
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>特定のサイト検索</h1>
+    <input type="text" id="searchQuery" placeholder="検索キーワード">
+    <button onclick="searchSite()">検索</button>
+</body>
+</html>
